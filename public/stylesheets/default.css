@@ -1,0 +1,144 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.4
+2009-07-27
+Author:Richard Clark - http://richclarkdesign.com
+*/
+
+/*------------------------------------------------------------------
+Default styles for html5.adamhunter.me
+By:Adam Hunter
+------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+html5 reset (Author: Richard Clark - http://richclarkdesign.com)
+http://html5doctor.com/html-5-reset-stylesheet/
+------------------------------------------------------------------*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,
+small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,dialog,figure,footer,header,hgroup,menu,nav,section,time,mark,audio,video
+{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body{line-height:1;}
+article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block;}
+nav ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+a{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;background:transparent;}
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted #000;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+hr{display:block;height:1px;border:0;border-top:1px solid #cccccc;margin:1em 0;padding:0;}
+input,select{vertical-align:middle;}
+/*------------------------------------------------------------------
+core layout, colors and typography
+------------------------------------------------------------------*/
+body{
+	font-size:62.5%;
+	padding:10px;
+}
+nav,section,article,header,footer{
+	font-family:Verdana, Arial, Sans-serif;
+	font-size:1.1em;
+}
+nav {
+	float:left;
+	font-size:1.3em;
+	padding:2px;
+	width:200px;
+}
+
+nav li {
+	padding:3px 0;
+}
+
+header,footer {
+	padding:5px 0;
+}
+
+#main {
+	margin-left:210px;
+	padding-left: 50px;
+	width:700px;
+}
+
+article {
+	min-height:400px;
+}
+
+section .container {
+	display:none;
+}
+
+/*------------------------------------------------------------------
+tags and classes
+------------------------------------------------------------------*/
+h1,h2,h3,h4,h5,h6{
+	font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+h1 {
+	font-size:1.8em;
+	margin-bottom:6px;
+}
+h2 {
+	font-size:1.6em;
+	margin-bottom:4px;
+}
+h3 {
+	font-size:1.4em;
+	margin-bottom:3px;
+}
+h4 {
+	font-size:1.2em;
+	margin-bottom:2px;
+}
+code{
+	font-size:1.3em;
+}
+a {
+	color:#00f;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+p {
+	font-size:1.1em;
+	line-height:1.3em;
+	padding:5px 0;
+}
+.show {
+	display:block;
+	padding:3px 0;
+}
+table {
+	width:100%;
+}
+
+table thead th {
+	padding-bottom: 5px;
+}
+
+table tbody td {
+	padding: 5px 0;
+}
+
+table tbody tr:nth-child(odd) td {
+	background:#ccc;
+}
+
+li {
+	padding:3px 0;
+}
+
+*[contenteditable="true"]:hover, *[contenteditable="true"]:focus {
+	border:1px dotted #ccc;
+}
+
+@font-face {
+  font-family: Flames;
+  src: url('/fonts/Flames.ttf');
+}
+.flame-on { font-family: Flames, Verdana, Sans-serif; font-size:36px;}

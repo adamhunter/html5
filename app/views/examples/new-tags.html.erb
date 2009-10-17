@@ -1,0 +1,89 @@
+<h2>So, all these fancy new tags...</h2>
+<article id="new-tags">
+  
+<ul>
+  <li>
+    <code>section</code> represents a generic document or application section. It can be used together with the h1, h2, h3, h4, h5, and h6 elements to indicate the document structure.
+  </li>
+  <li>
+    <code>article</code> represents an independent piece of content of a document, such as a blog entry or newspaper article.
+  </li>
+  <li>
+    <code>aside</code> represents a piece of content that is only slightly related to the rest of the page.
+  </li>
+  <li>
+    <code>header</code> represents a group of introductory or navigational aids.
+  </li>
+  <li>
+    <code>footer</code> represents a footer for a section and can contain information about the author, copyright information, et cetera.
+  </li>
+  <li>
+    <code>nav</code> represents a section of the document intended for navigation.
+  </li>
+  <li>
+    <code>video</code> and <code>audio</code> for multimedia content. Both provide an API so application authors can script their own user interface, but there is also a way to trigger a user interface provided by the user agent. source elements are used together with these elements if there are multiple streams available of different types.
+  </li>
+  <li>
+    <code>dialog</code> can be used to mark up a conversation.
+  </li>
+  <li>
+    <code>hgroup</code> represents the header of a section.
+  </li>
+  <li>
+    <code>figure</code> can be used to associate a caption together with some embedded content, such as a graphic or video.
+  </li>
+  <li>
+    <code>embed</code> is used for plugin content.
+  </li>
+  <li>
+    <code>mark</code> represents a run of marked text.
+  </li>
+  <li>
+    <code>progress</code> represents a completion of a task, such as downloading or when performing a series of expensive operations.
+  </li>
+  <li>
+    <code>meter</code> represents a measurement, such as disk usage.
+  </li>
+  <li>
+    <code>time</code> represents a date and/or time.
+  </li>
+  <li>
+    <code>ruby</code>, <code>rt</code> and <code>rp</code> allow for marking up ruby annotations.
+  </li>
+  <li>
+    <code>canvas</code> is used for rendering dynamic bitmap graphics on the fly, such as graphs or games.
+  </li>
+  <li>
+    <code>command</code> represents a command the user can invoke.
+  </li>
+  <li>
+    <code>details</code> represents additional information or controls which the user can obtain on demand.
+  </li>
+  <li>
+    <code>datalist</code> together with the a new list attribute for input can be used to make comboboxes.
+  </li>
+  <li>
+    <code>keygen</code> represents control for key pair generation.
+  </li>
+  <li>
+    <code>output</code> represents some type of output, such as from a calculation done through scripting.  
+  </li>
+</ul>
+<p>
+  source: <a href="http://dev.w3.org/html5/html4-differences/#new-elements">
+    http://dev.w3.org/html5/html4-differences/#new-elements</a>
+</p>
+</article>
+<% content_for :notes do -%>
+  <p>
+    The first six elements allow for much better semantic markup.  They will essentially replace all the standard
+    <code>&lt;div id="header"&gt;</code>.  Generally a <code>div</code> is only needed now as an element to receive script
+    output or as a CSS hook.
+  </p>
+  <p>
+    The <code>audio</code> tag will allow embedding of audio content directly in html with no intermediate plugin to play.
+    <code>Video</code> will be able to do the same for video, but currently there is a format war being fought over Ogg Theora
+    and H.264 (see: <a href="http://arstechnica.com/open-source/news/2009/07/decoding-the-html-5-video-codec-debate.ars">
+      http://arstechnica.com/open-source/news/2009/07/decoding-the-html-5-video-codec-debate.ars</a>)
+  </p>
+<% end -%>

@@ -1,0 +1,40 @@
+<% content_for :title, 'Form Validations' -%>
+<article id="form-validations">
+  <h3>Well I couldn't get these to work...</h3>
+  <p>
+    But I found some nifty resources.  For example!  <br/>
+    The <code>input</code> element will have a bunch of new types.
+    <ul>
+      <li>tel</li>
+      <li>search</li>
+      <li>url</li>
+      <li>email</li>
+      <li>datetime</li>
+      <li>date</li>
+      <li>month</li>
+      <li>week</li>
+      <li>time</li>
+      <li>datetime-local</li>
+      <li>number</li>
+      <li>range</li>
+      <li>color</li>
+    </ul>
+    see: <a href="http://dev.w3.org/html5/html4-differences/#new-elements" target="_blank">Scroll down just a little.</a>
+    <br/><br/>
+    An excellent example of some of these (using Dean Edwards HTML5 Now) 
+    <a href="http://html5-now.appspot.com/input.html" target="_blank">HTML5 Now Input</a>.
+  </p>
+  <p>
+    Forms will now be able to be validated without javascript (you can create custom validation with the JS API).
+    <ul>
+      <li><code>required</code> attribute</li>
+      <li><code>pattern</code> attribute, such as an email or url format</li>
+      <li><code>maxlength</code> controlling how long the string value can be</li>
+      <li><code>min</code> and <code>max</code> values to check numbers against</li>
+      <li><code>step</code> which controls the granularity of the value
+        (<a href="http://dev.w3.org/html5/spec/Overview.html#attr-input-step">spec</a>)</li>
+    </ul>
+    See <a href="http://dev.w3.org/html5/spec/Overview.html#constraints">
+      http://dev.w3.org/html5/spec/Overview.html#constraints</a> for a more thorough descriptions of the validations.
+  </p>
+</article>

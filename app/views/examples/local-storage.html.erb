@@ -1,0 +1,48 @@
+<% content_for :title, 'Web Databases and Local Storage' -%>
+<article id="local-storage">
+  <p>The HTML5 spec includes local storage for data.  There are three persistence options.</p>
+  <ol>
+    <li>Session Store</li>
+    <li>Local Store</li>
+    <li>Web Database</li>
+  </ol>
+  <p>
+    The session and local store are very easy to access and store data in.  The Web Database is much more complex and
+    <a href="http://dev.w3.org/html5/webdatabase/" target="_blank">the spec</a> does not currently define a SQL Dialect, though Safari and Mobile Safari are using SQLite3 (I believe).
+  </p>
+  <hr/>
+  <h4>Local Storage Demo</h4>
+  <div id="test-container">
+    <label for="storage-test">Type in this box and refresh the page</label>
+    <input type="text" name="storage-test" id="storage-test" />
+    <span></span><br/>
+    <button id="clear-storage">Clear Storage</button>
+  </div>
+  
+</article>
+<% content_for :notes do -%>
+  This demo is based of the demo at <a href="http://html5demos.com/storage">http://html5demos.com/storage</a>.
+<% end -%>
+<% content_for :example_js do -%>
+  
+  jQuery(function($){
+    
+    var viewStorage = function() {
+      if (window.localStorage.savedForLater) { 
+        $('#test-container span').html(window.localStorage.savedForLater); 
+      } else {
+        $('#test-container span').html('');
+      }
+    }
+    viewStorage();
+    
+    $('#storage-test').keyup(function(){
+      window.localStorage.savedForLater = $(this).val();
+    });
+    $('#clear-storage').click(function(){
+      window.localStorage.clear();
+      viewStorage();
+    })
+  });
+  
+<% end -%>

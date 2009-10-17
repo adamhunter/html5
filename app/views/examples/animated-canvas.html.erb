@@ -1,0 +1,81 @@
+<% content_for :title, 'Animated Canvas' -%>
+<article id="animated-canvas">
+  <canvas id="spinner">Arg! No Canvas Support!!!</canvas>
+  <br/>
+  example from: <a href="http://html5demos.com/canvas">http://html5demos.com/canvas</a>
+  
+  <h5>Some other REALLY awesome uses of the <code>canvas</code> element</h5>
+  <ul>
+    <li><a href="http://www.benjoffe.com/code/demos/canvascape/" target="_blank">Canvascape - 3D Walker</a></li>
+    <li><a href="http://9elements.com/io/projects/html5/canvas/" target="_blank">EyeCandy Canvas</a></li>
+    <li><a href="http://www.filamentgroup.com/lab/jquery_visualize_plugin_accessible_charts_graphs_from_tables_html5_canvas/" target="_blank">
+      jQuery Visualize Plugin: Accessible Charts &amp; Graphs from Table Elements using HTML 5 Canvas</a></li>
+  </ul>
+</article>
+<% content_for :notes do -%>
+  One way to get the HTML canvas element to work properly in IE is to use <a href="http://code.google.com/p/explorercanvas/">
+    http://code.google.com/p/explorercanvas/</a>.
+<% end -%>
+<% content_for :example_js do -%>
+  
+  buildSpinner({ x : 50, y : 50, size : 20, degrees : 30 });
+
+  function buildSpinner(data) {
+
+    var canvas = document.getElementById('spinner');
+    canvas.height = 100;
+    canvas.width = 300;
+
+    var ctx = canvas.getContext("2d"),
+      i = 0, degrees = data.degrees, loops = 0, degreesList = [];
+
+    for (i = 0; i < degrees; i++) {
+      degreesList.push(i);
+    }
+
+    // reset
+    i = 0;
+
+    // so I can kill it later
+    window.canvasTimer = setInterval(draw, 1000/degrees);  
+
+    function reset() {
+      ctx.clearRect(0,0,100,100); // clear canvas
+
+      var left = degreesList.slice(0, 1);
+      var right = degreesList.slice(1, degreesList.length);
+      degreesList = right.concat(left);
+    }
+
+    function draw() {
+      var c, s, e;
+
+      var d = 0;
+
+      if (i == 0) {
+        reset();
+      }
+
+      ctx.save();
+
+      d = degreesList[i];
+      c = Math.floor(255/degrees*i);
+      ctx.strokeStyle = 'rgb(' + c + ', ' + c + ', ' + c + ')';
+      ctx.lineWidth = data.size;
+      ctx.beginPath();
+      s = Math.floor(360/degrees*(d));
+      e = Math.floor(360/degrees*(d+1)) - 1;
+
+      ctx.arc(data.x, data.y, data.size, (Math.PI/180)*s, (Math.PI/180)*e, false);
+      ctx.stroke();
+
+      ctx.restore();
+
+      i++;
+      if (i >= degrees) {
+        i = 0;
+      }
+    }  
+  }
+  
+<% end -%>

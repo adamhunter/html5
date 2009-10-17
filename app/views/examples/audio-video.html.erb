@@ -1,0 +1,32 @@
+<% content_for :title, 'Audio and Video' %>
+<h2>Hear No Evil, See No Evil</h2>
+<article id="audio-video">
+<ul>
+  <li>
+    <h4>Audio</h4>
+    <ol>
+      <li>
+        <audio src="/media/iPhone.mp3" autoplay="autoplay"></audio> 
+        Audio tags are invisible by default.</li>
+      <li>
+        <audio src="/media/iPhone.mp3" controls="controls"></audio> <br/>
+        unless you specify <code>controls="controls"</code></li>
+      <li><a href="http://www.w3.org/TR/html5/video.html#audio">http://www.w3.org/TR/html5/video.html#audio</a></li>
+    </ol>
+  </li>
+  <li>
+    <h4>Video</h4>
+    <ol>
+      <li>
+        <video src="/media/kittens.mp4" controls="controls" autobuffer="autobuffer" height="288" width="384"></video>
+      </li>
+      <li>The <code>video</code> tag behaves similarly to the <code>audio</code> tag.  This video is H.264 encoded.</li>
+      <li><a href="http://www.w3.org/TR/html5/video.html#video">http://www.w3.org/TR/html5/video.html#video</li>
+      <li><a href="http://www.youtube.com/watch?v=vdQj2ohqCBk">http://www.youtube.com/watch?v=vdQj2ohqCBk</a> (source)</li>
+    </ol>
+  </li>
+</ul>
+</article>
+<% content_for :notes do -%>
+  The controls will take on the OS's default styling.  You can however script the controls to customize them.
+<% end -%>

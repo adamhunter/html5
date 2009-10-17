@@ -1,0 +1,65 @@
+<%= content_for :title, 'HTML vs XHTML' %>
+<article id="html-xhtml">
+  <p>
+    <strong>XHTML</strong> is an <strong>XML</strong> serialized version of <strong>HTML</strong>
+  </p>
+  <p>Buhhh?</p>
+  <p>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>HTML5</th>
+          <th>XHTML5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MIME Type</td>
+          <td><code>text/html</code></td>
+          <td><code>application/xhtml+xml</code></td>
+        </tr>
+        <tr>
+          <td><code>noscript</code></td>
+          <td>Yes</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Attributes</td>
+          <td><code>disabled</code></td>
+          <td><code>disabled="disabled"</code></td>
+        </tr>
+        <tr>
+          <td>Case</td>
+          <td>UPPER Or lower</td>
+          <td>all lowercase</td>
+        </tr>
+        <tr>
+          <td>Self closing tags</td>
+          <td>No</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>All tags must be closed</td>
+          <td>No</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+  <p>
+    Source: <a href="http://dev.w3.org/html5/spec/Overview.html#html-vs-xhtml">
+      http://dev.w3.org/html5/spec/Overview.html#html-vs-xhtml</a>
+  </p>
+  <a href="#" class="show">Show Comic</a>
+  <div class="container">
+    <%= image_tag 'part1.jpg', :alt => 'XHTML Comic Part 1' %>
+    <%= image_tag 'part2.jpg', :alt => 'XHTML Comic Part 2' %>
+    <%= image_tag 'part3.jpg', :alt => 'XHTML Comic Part 3' %>
+    <%= image_tag 'part4.jpg', :alt => 'XHTML Comic Part 4' %>
+    <p>
+      Source: <a href="http://www.smashingmagazine.com/2009/07/29/misunderstanding-markup-xhtml-2-comic-strip/">
+        http://www.smashingmagazine.com/2009/07/29/misunderstanding-markup-xhtml-2-comic-strip/</a>
+    </p>
+  </div>
+</article>

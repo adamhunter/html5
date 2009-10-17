@@ -1,0 +1,42 @@
+<% 
+  @title = 'HTML 5 Examples' 
+  @example_js = yield(:example_js)
+-%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) || @title %></title>
+  <%= stylesheet_link_tag 'default' %>
+  <link type="text/css" rel="stylesheet" href="/syntax-highlighter/Styles/SyntaxHighlighter.css" />
+</head>
+
+<body>
+
+<header>
+  <h1><%= yield(:header) || yield(:title) || @title %></h1>
+</header>
+
+<%= render :partial => 'shared/nav' %>
+
+<section id="main">
+<%= yield %>
+</section>
+
+<section id="source">
+  <a href="#" class="show">Show Page Source</a>
+  <div class="container"><pre name="code" class="html"></pre></div>
+</section>
+
+<section id="notes">
+  <a href="#" class="show">Show Notes</a>
+  <div class="container"><%= yield :notes %></div>
+</section>
+
+<footer>
+  Made by Adam Hunter (<a href="http://twitter.com/_ah" target="_blank">@_ah</a>) 
+  with help from Bermon Painter (<a href="http://twitter.com/killermoo" target="_blank">@killermoo</a>)
+</footer>
+  
+<%= render :partial => 'shared/scripts' %>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<% content_for :title, 'HTML 5 Shiv' %>
+<article id="html5-shiv">
+  <p>
+    In order to get IE to work properly with HTML5, you have to initialize the new HTML5 elements before the page loads.
+    The HTML5 Shiv script will do that for you. Include the following conditional comment in your <code>head</code>.
+  </p>
+  <p><pre name="code" class="html">
+    &lt;!--[if IE]&gt;
+    &lt;script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+  </pre></p>
+  <p>
+    Or you can download it directly from <a href="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+      http://html5shiv.googlecode.com/svn/trunk/html5.js</a>.  Not suprisingly, this script is thanks to 
+      <a href="http://remysharp.com/2009/01/07/html5-enabling-script/">Rem</a>.
+  </p>
+  
+</article>
+<% content_for :notes do %>
+  Javascript ninja John Resig talks about creating the elements via JS before they are used on 
+  <a href="http://ejohn.org/blog/html5-shiv/" target="_blank">his blog</a>. 
+  <br/> Ninja John can also be seen in this picture here:<br/>
+  <%= image_tag 'ninja.jpg', :alt => 'How many Ninjas do you count?' %>
+<% end %>

@@ -1,0 +1,79 @@
+<% content_for :title, 'HTML5 Canvas Tag Example' %>
+<article id="canvas">
+  <h3>Kindergarden Drawings*</h3>
+  <canvas id="canvas-1" width="300" height="150">Uh Oh, you don't support the canvas tag!</canvas>
+  <br/>
+  <canvas id="canvas-2" width="300" height="150">Uh Oh, you don't support the canvas tag!</canvas>
+  <br/>
+  <canvas id="canvas-3" width="300" height="150">Uh Oh, you don't support the canvas tag!</canvas>
+  <br/>
+  <canvas id="canvas-4" width="300" height="150">Uh Oh, you don't support the canvas tag!</canvas>
+</article>
+<% content_for :notes do -%>
+  canvas examples from: 
+  <a href="http://dev.opera.com/articles/view/html-5-canvas-the-basics/" target="_blank">
+    http://dev.opera.com/articles/view/html-5-canvas-the-basics/</a>
+    <br/>
+    *Actually maybe preschool. 
+<% end -%>
+<% content_for :example_js do -%>
+  (function(){
+    var elem = document.getElementById('canvas-1');
+    if (!elem || !elem.getContext) { return; }
+    var context = elem.getContext('2d');
+    if (!context) { return; }
+    
+    context.fillRect(0, 0, 150, 100);
+  })();
+  
+  (function(){
+    var elem = document.getElementById('canvas-2');
+    if (!elem || !elem.getContext) { return; }
+    var context = elem.getContext('2d');
+    if (!context) { return; }
+    
+    context.fillStyle   = '#00f'; // blue
+    context.strokeStyle = '#f00'; // red
+    context.lineWidth   = 4;
+    context.fillRect  (0,   0, 150, 50);
+    context.strokeRect(0,  60, 150, 50);
+    context.clearRect (30, 25,  90, 60);
+    context.strokeRect(30, 25,  90, 60);
+  })();
+  
+  (function(){
+    var elem = document.getElementById('canvas-3');
+    if (!elem || !elem.getContext) { return; }
+    var context = elem.getContext('2d');
+    if (!context) { return; }
+    
+    context.fillStyle   = '#00f';
+    context.strokeStyle = '#f00';
+    context.lineWidth   = 4;
+    context.beginPath();
+    // Start from the top-left point.
+    context.moveTo(10, 10); // give the (x,y) coordinates
+    context.lineTo(100, 10);
+    context.lineTo(10, 100);
+    context.lineTo(10, 10);
+    // Note: your shape will not be visible until you call any of the two methods.
+    context.fill();
+    context.stroke();
+    context.closePath();
+  })();
+  
+  (function(){
+    var elem = document.getElementById('canvas-4');
+    if (!elem || !elem.getContext) { return; }
+    var context = elem.getContext('2d');
+    if (!context) { return; }
+    
+    context.fillStyle    = '#00f';
+    context.font         = 'italic 30px sans-serif';
+    context.textBaseline = 'top';
+    context.fillText  ('Hello world!', 0, 0);
+    context.font         = 'bold 30px sans-serif';
+    context.strokeText('Hello world!', 0, 50);
+  })();
+
+<% end -%>

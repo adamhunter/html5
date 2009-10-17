@@ -1,0 +1,27 @@
+<% content_for :title, 'Font Face' %>
+<article id="font-face">
+  <h3>But that's CSS3!!!</h3>
+  <p>Yes, yes it is.  But I found it really cool so I tacked it on as a bonus.
+    <br/>Suprisingly its pretty easy. 
+    <br/><br/>
+    The one snafoo is that you have to make sure you are clear with the font's copy write. This can
+    be accomplished by using a font foundry such as <a href="http://openfontlibrary.fontly.org/">
+      http://openfontlibrary.fontly.org/</a>
+    <br/>Put this inside your css file or in a <code>style</code> tag.</p>
+  <p><pre name="code" class="css">
+    @font-face {
+      font-family: Flames;
+      src: url('/fonts/Flames.ttf');
+    }
+    .flame-on { font-family: Flames, Verdana, Sans-serif; font-size:36px;}
+  </pre></p>
+  <p>And you will get:</p>
+  <p class="flame-on">Thanks CLT Barcamp!  Any burning questions?</p>
+  <p>Also, Internet Explorer (surprise surprise) only supports OTF, but 
+    <a href="http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/" target="_blank">
+    Paul Irish</a> has an awesome article on how handle both.</p>
+</article>
+<% content_for :notes do -%>
+  I probably don't have the right to use the Flame font, though it was freely downloaded from: 
+  <a href="http://www.1001freefonts.com/Flames.php">http://www.1001freefonts.com/Flames.php</a>.
+<% end -%>
