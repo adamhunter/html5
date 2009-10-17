@@ -15,7 +15,13 @@ role :web, domain
 role :db,  domain, :primary => true
 
 namespace :deploy do
-  [:start, :stop, :finalize_update, :restart].each do |t|
+  desc "Restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+  
+  
+  [:start, :stop].each do |t|
     desc "#{t} task is a no-op with just mod_rails"
     task t, :roles => :app do ; end
   end
